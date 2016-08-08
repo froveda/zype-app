@@ -23,3 +23,6 @@
 # Ignore RubyMine Files
 /.idea/*
 .idea/*
+
+# Ignore .env
+.env

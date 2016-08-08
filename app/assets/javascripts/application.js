@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require videos_carousel
 //= require_tree .

@@ -3,13 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 gem 'jquery-rails'
 gem 'devise'
-gem "slim-rails"
-
-group :assets do
-  gem 'sass-rails', '~> 5.0'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'coffee-rails', '~> 4.1.0'
-end
+gem 'slim-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'sqlite3'

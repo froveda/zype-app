@@ -13,7 +13,7 @@ class SessionsController < Devise::SessionsController
       self.resource.update_attributes(access_token: body['access_token'])
       sign_in(resource_name, resource)
 
-      redirect_to root_path
+      redirect_to stored_location_for(:user)
     else
       self.resource = User.new(email: params['user']['email'])
       @error = "Incorrect user and password combination"

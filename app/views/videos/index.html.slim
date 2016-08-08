@@ -1,0 +1,16 @@
+.container
+  .row
+    - @videos.each do |video|
+      .col-lg-15
+        a.video-container href=video_path(id: video['_id'])
+          = image_tag video['thumbnails'].first['url'], class: 'video-thumbnail'
+          .video-title.two-line-ellipsis= video['title']
+          .bla= video['subscription_required']
+
+  .row
+    .col-xs-12
+      ul.pager
+        li.previous class=('disabled' if(!@pagination['previous']))
+          = link_to "&larr; Previous".html_safe, videos_path(page: @pagination['previous']), class: 'videos-pager-link'
+        li.next class=('disabled' if(@pagination['pages'] < @pagination['next']))
+          = link_to "Next &rarr;".html_safe, videos_path(page: @pagination['next']), class: 'videos-pager-link'

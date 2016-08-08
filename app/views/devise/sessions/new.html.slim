@@ -1,4 +1,10 @@
-.span
-  fieldset
-    legend Sign in
-    = render 'form'
+.container
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f|
+    h2.form-signin-heading Please sign in
+    = f.email_field :email, placeholder: "Email address", class: 'form-control'
+    = f.password_field :password, placeholder: "Password", class: 'form-control'
+    .error= @error
+    .checkbox
+      label
+        input type="checkbox" value="remember-me" Remember me
+    = f.submit "Sign in", :class => "button btn btn-lg btn-primary btn-block"

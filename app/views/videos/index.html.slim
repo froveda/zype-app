@@ -5,7 +5,6 @@
         a.video-container href=video_path(id: video['_id'])
           = image_tag video['thumbnails'].first['url'], class: 'video-thumbnail'
           .video-title.two-line-ellipsis= video['title']
-          .bla= video['subscription_required']
 
   .row
     .col-xs-12

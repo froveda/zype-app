@@ -54,5 +54,7 @@ script src="https://player.zype.com/embed/#{@video_id}.js?autoplay=true&access_t
 ```
 ## Considerations
 - I use [bootstrap-sass](https://github.com/twbs/bootstrap-sass) gem to include bootstrap 3 components into the application
-- A live version of the application is hosted on Heroku. [click here](https://zype-videos.herokuapp.com/) to access it.
+- A live version of the application is hosted on Heroku. [click here](https://zype-videos.herokuapp.com/) to access it. Logint with the following credentials:
+  - user: test@test.com
+  - password: password
 - I have not used ActiveRecord to store users since right now I use the Zype login api to get the data that I need. But in the future, it is possible to use ActiveRecord for users if there is a need to do this

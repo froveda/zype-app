@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
+  include WardenHelper
+
   protect_from_forgery with: :exception
-  before_filter :store_current_location, unless: :devise_controller?
+  before_filter :store_current_location
 
   private
   def store_current_location
-    store_location_for(:user, request.url)
+    session[:store_location] = request.url
+  end
+
+  def stored_location
+    session[:store_location]
   end
 end

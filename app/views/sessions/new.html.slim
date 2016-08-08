@@ -1,10 +1,13 @@
 .container
-  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f|
-    h2.form-signin-heading Please sign in
+  = form_for(@user, url: sessions_path(@user), method: :post, html: {class: 'form-signin'}) do |f|
+    h2.form-signin-heading= t('login_form.sign_in')
+
     = f.email_field :email, placeholder: "Email address", class: 'form-control'
     = f.password_field :password, placeholder: "Password", class: 'form-control'
-    .error= @error
+
+    .error-message= @error
+
     .checkbox
       label
-        input type="checkbox" value="remember-me" Remember me
+        input type="checkbox" value="remember-me"=t('login_form.remember_me')
     = f.submit "Sign in", :class => "button btn btn-lg btn-primary btn-block"

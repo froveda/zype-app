@@ -1,19 +1,19 @@
 .container.subscribed-video
   .row
-    - if current_user
+    - if signed_in?
       .col-xs-12
         div id="zype_#{@video_id}"
-        script src="https://player.zype.com/embed/#{@video_id}.js?autoplay=true&access_token=#{current_user.access_token} " type="text/javascript"
+        script src="https://player.zype.com/embed/#{@video_id}.js?autoplay=true&access_token=#{current_user['access_token']} " type="text/javascript"
     - else
       .col-lg-offset-3.col-lg-6
         .panel.panel-default.subscribe-paywall
           .panel-body
             .row
               .col-xs-12
-                h4.text-center In order to watch this video you need to...
+                h4.text-center=t('subscribe-paywall.title')
             .row
               .col-lg-offset-2.col-lg-4
-                = link_to new_user_session_path do
-                  button type="button" class="btn btn-primary" Login
+                = link_to new_session_path do
+                  button type="button" class="btn btn-primary"=t('subscribe-paywall.login')
               .col-lg-4
-                button type="button" class="btn btn-success" Subscribe
+                button type="button" class="btn btn-success"=t('subscribe-paywall.subscribe')

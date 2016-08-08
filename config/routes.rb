@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: "sessions" }
-  root to: "home#index"
+  resources :sessions, only: [:new, :create] do
+    collection do
+      delete :logout
+      get :login_fail
+    end
+  end
 
   resources :videos, only: [:index, :show]
+
+  root to: "home#index"
 end

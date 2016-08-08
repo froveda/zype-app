@@ -2,14 +2,13 @@ nav.navbar.navbar-default
   .container
     .navbar-header
       button.navbar-toggle.collapsed aria-expanded="false" data-target="#zype-navbar" data-toggle="collapse" type="button"
-        span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href=root_path  Zype Videos
+      a.navbar-brand href=root_path = t('navbar.brand')
 
     #zype-navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        - if current_user
+        - if signed_in?
           li
-            = link_to 'Logout', destroy_user_session_path, method: :delete
+            = link_to t('navbar.logout'), logout_sessions_path, method: :delete

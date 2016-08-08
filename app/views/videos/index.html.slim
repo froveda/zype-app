@@ -10,6 +10,6 @@
     .col-xs-12
       ul.pager
         li.previous class=('disabled' if(!@pagination['previous']))
-          = link_to "&larr; Previous".html_safe, videos_path(page: @pagination['previous']), class: 'videos-pager-link'
+          = link_to "&larr; #{t('pagination.previous')}".html_safe, videos_path(page: @pagination['previous']), class: 'videos-pager-link'
         li.next class=('disabled' if(@pagination['pages'] < @pagination['next']))
-          = link_to "Next &rarr;".html_safe, videos_path(page: @pagination['next']), class: 'videos-pager-link'
+          = link_to "#{t('pagination.next')} &rarr;".html_safe, videos_path(page: @pagination['next']), class: 'videos-pager-link'
